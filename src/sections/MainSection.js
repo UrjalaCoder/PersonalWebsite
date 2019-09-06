@@ -40,7 +40,7 @@ const MainSection = (props) => {
         backgroundColor: colors.nickel,
       }}>
 
-        <ImageContentBox url={'/static/images/infinite-mathematical-symbol.png'} width={100} height={110} style={{
+        <ImageContentBox url={'/static/images/infinity.png'} width={100} height={110} style={{
           fontSize: '22px',
           borderColor: colors['baby-blue'],
           paddingTop: '0px',
@@ -51,7 +51,7 @@ const MainSection = (props) => {
         <ImageContentBox
           url={'/static/images/users.png'}
           width={100}
-          height={110}
+          height={100}
           style={{
             fontSize: '22px',
             borderColor: colors['baby-blue'],
@@ -63,7 +63,7 @@ const MainSection = (props) => {
         <ImageContentBox
           url={'/static/images/innovation.png'}
           width={100}
-          height={110}
+          height={100}
           style={{
             fontSize: '22px',
             borderColor: colors['baby-blue'],
@@ -74,17 +74,85 @@ const MainSection = (props) => {
         </ImageContentBox>
       </MainContent>
       <div style={titleStyle}>
-        {'Technologies'}
+        {'Technologies that I wield'}
       </div>
       <div>
         <MainContent style={{
           marginBottom: 0,
         }}>
-          <ImageContentBox url={'/static/images/javascript.jpg'} width={100} height={100}>
-            {"Modern javascript with ES6 features."}
+          <ImageContentBox
+            url={'/static/images/javascript.png'}
+            width={100}
+            height={100}
+            style={{
+              fontSize: '22px',
+              borderColor: colors['baby-blue'],
+              textAlign: 'center',
+            }}
+          >
+          {"Modern JavaScript width ES6 features."}
           </ImageContentBox>
-          <ImageContentBox>
-            {"Hello, world!"}
+          <ImageContentBox
+            url={'/static/images/react.png'}
+            width={100}
+            height={100}
+            style={{
+              fontSize: '22px',
+              borderColor: colors['baby-blue'],
+              textAlign: 'center',
+            }}
+          >
+          {"ReactJS, Redux, Redux-Saga and also React-Native."}
+          </ImageContentBox>
+          <ImageContentBox
+          url={'/static/images/nodejs.svg'}
+          width={100}
+          height={100}
+          style={{
+            fontSize: '22px',
+            borderColor: colors['baby-blue'],
+            textAlign: 'center',
+          }}
+          >
+          {"I can program server-side using NodeJS. For instance this website is running on an ExpressJS server using NodeJS."}
+          </ImageContentBox>
+        </MainContent>
+        <MainContent>
+          <ImageContentBox
+            url={'/static/images/scala.png'}
+            width={100}
+            height={100}
+            style={{
+              fontSize: '22px',
+              borderColor: colors['baby-blue'],
+              textAlign: 'center',
+            }}
+          >
+          {"I can also program in Scala and Java"}
+          </ImageContentBox>
+          <ImageContentBox
+            url={'/static/images/python.png'}
+            width={100}
+            height={100}
+            style={{
+              fontSize: '22px',
+              borderColor: colors['baby-blue'],
+              textAlign: 'center',
+            }}
+          >
+          {"I have excellent Python programming skills. For instance, I have made a Neural Network on my own using Python 3.7 and Numpy."}
+          </ImageContentBox>
+          <ImageContentBox
+          url={'/static/images/c.png'}
+          width={100}
+          height={100}
+          style={{
+            fontSize: '22px',
+            borderColor: colors['baby-blue'],
+            textAlign: 'center',
+          }}
+          >
+          {"Native C-code with C99 standards. Also C++."}
           </ImageContentBox>
         </MainContent>
       </div>
