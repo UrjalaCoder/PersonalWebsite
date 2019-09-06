@@ -1,26 +1,13 @@
 import React from "react";
-
-class Overlay extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  
-  render() {
-    return (
-      <div style={style}>
-        <canvas ref={this.canvasRef} style={canvasStyle}></canvas>
-        <div style={textStyle}>{text || "undefined"}</div>
-      </div>
-    );
-  }
-
-}
+import MainSection from "sections/MainSection";
+import LandingPage from "sections/LandingPage";
 
 class App extends React.Component{
   render(){
     return(
       <div className="App">
-        <Overlay text={'Welcome, traveler!'}/>
+        <LandingPage />
+        <MainSection />
       </div>
     );
   }
