@@ -8,6 +8,7 @@ const MainContent = (props) => {
   const containerStyle = {
     display: 'flex',
     flexDirection: 'row',
+    flexWrap: 'wrap',
     width: '100%',
     flexBasis: '100%',
     justifyContent: 'space-evenly',
