@@ -5,6 +5,34 @@ import MainContent from "../components/MainContent";
 import colors from "../colors";
 
 
+const getBox = ({text, url}) => {
+  const boxStyle = {
+    fontSize: '22px',
+    borderColor: colors['light-border'],
+    textAlign: 'center',
+    backgroundColor: colors['baby-blue'],
+  };
+
+  return (
+    <ImageContentBox key={text} url={`/static/images/${url}`} width={100} height={100} style={boxStyle}>
+      {text}
+    </ImageContentBox>
+  );
+};
+
+const formGroups = (allBoxes) => {
+  const result = [];
+  const contentStyle = {
+    marginBottom: '0px',
+  };
+  for(let i = 0; i < allBoxes.length; i += 3) {
+    const subset = allBoxes.slice(i, i + 3);
+    result.push(<MainContent key={i} style={contentStyle}>{subset}</MainContent>);
+  }
+
+  return result;
+};
+
 const MainSection = (props) => {
 
   const sectionStyle = {
@@ -26,146 +54,45 @@ const MainSection = (props) => {
     color: colors['baby-blue'],
   };
 
+  const boxStyle = {
+    fontSize: '22px',
+    borderColor: colors['light-border'],
+    textAlign: 'center',
+    backgroundColor: colors['baby-blue'],
+  };
+
+  if(!props.text) {
+    return (
+      <h3>Loading</h3>
+    );
+  }
+
+  const superpowerBoxes = props.text.skills.map((skill) => {
+    const { text, url } = skill;
+    return getBox({text, url});
+  });
+
+  const technologyBoxes = props.text.technologies.map((tech) => {
+    const { text, url } = tech;
+    return getBox({text, url});
+  });
+
+  const techGroup = formGroups(technologyBoxes);
+
   return (
     <div>
     <div style={sectionStyle}>
       <div style={titleStyle}>
-        {props.text || 'My superpowers'}
+        {'My superpowers'}
       </div>
       <MainContent>
-
-        <ImageContentBox url={'/static/images/infinity.png'} width={100} height={110} style={{
-          fontSize: '22px',
-          borderColor: colors['light-border'],
-          textAlign: 'center',
-          backgroundColor: colors['baby-blue'],
-        }}>
-          {"Superb mathematical and analytical skills."}
-        </ImageContentBox>
-
-        <ImageContentBox
-          url={'/static/images/users.png'}
-          width={100}
-          height={100}
-          style={{
-            fontSize: '22px',
-            borderColor: colors['light-border'],
-            textAlign: 'center',
-
-            backgroundColor: colors['baby-blue'],
-          }}
-        >
-          {"Good interpersonal skills. I can get along great with all kinds of people."}
-        </ImageContentBox>
-        <ImageContentBox
-          url={'/static/images/innovation.png'}
-          width={100}
-          height={100}
-          style={{
-            fontSize: '22px',
-            borderColor: colors['light-border'],
-            textAlign: 'center',
-
-            backgroundColor: colors['baby-blue'],
-          }}
-        >
-        {"I can create innovative solutions to hard engineering problems."}
-        </ImageContentBox>
+        {superpowerBoxes}
       </MainContent>
       <div style={titleStyle}>
         {'Technologies that I wield'}
       </div>
       <div>
-        <MainContent style={{
-          marginBottom: 0,
-        }}>
-          <ImageContentBox
-            url={'/static/images/javascript.png'}
-            width={100}
-            height={100}
-            style={{
-              fontSize: '22px',
-              borderColor: colors['light-border'],
-              textAlign: 'center',
-
-              backgroundColor: colors['baby-blue'],
-            }}
-          >
-          {"Modern JavaScript width ES6 features."}
-          </ImageContentBox>
-          <ImageContentBox
-            url={'/static/images/react.png'}
-            width={100}
-            height={100}
-            style={{
-              fontSize: '22px',
-              borderColor: colors['light-border'],
-              textAlign: 'center',
-
-              backgroundColor: colors['baby-blue'],
-            }}
-          >
-          {"ReactJS, Redux, Redux-Saga and also React-Native."}
-          </ImageContentBox>
-          <ImageContentBox
-          url={'/static/images/nodejs.svg'}
-          width={100}
-          height={100}
-          style={{
-            fontSize: '22px',
-            borderColor: colors['light-border'],
-            textAlign: 'center',
-
-            backgroundColor: colors['baby-blue'],
-          }}
-          >
-          {"I can program server-side using NodeJS. For instance this website is running on an ExpressJS server using NodeJS."}
-          </ImageContentBox>
-        </MainContent>
-        <MainContent>
-          <ImageContentBox
-            url={'/static/images/scala.png'}
-            width={100}
-            height={100}
-            style={{
-              fontSize: '22px',
-              borderColor: colors['light-border'],
-              textAlign: 'center',
-
-              backgroundColor: colors['baby-blue'],
-            }}
-          >
-          {"I can also program in Scala and Java"}
-          </ImageContentBox>
-          <ImageContentBox
-            url={'/static/images/python.png'}
-            width={100}
-            height={100}
-            style={{
-              fontSize: '22px',
-              borderColor: colors['light-border'],
-              textAlign: 'center',
-
-              backgroundColor: colors['baby-blue'],
-            }}
-          >
-          {"I have excellent Python programming skills. For instance, I have made a Neural Network on my own using Python 3.7 and Numpy."}
-          </ImageContentBox>
-          <ImageContentBox
-          url={'/static/images/c.png'}
-          width={100}
-          height={100}
-          style={{
-            fontSize: '22px',
-            borderColor: colors['light-border'],
-            textAlign: 'center',
-
-            backgroundColor: colors['baby-blue'],
-          }}
-          >
-          {"Native C-code with C99 standards. Also C++."}
-          </ImageContentBox>
-        </MainContent>
+        {techGroup}
       </div>
     </div>
     </div>

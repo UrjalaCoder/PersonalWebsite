@@ -27,8 +27,6 @@ const AboutSection = (props) => {
     alignItems: 'center',
     flexWrap: 'wrap',
   };
-
-  console.log(props);
   return (
     <MainContent style={{
       flexDirection: 'column',

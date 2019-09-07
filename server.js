@@ -15,7 +15,7 @@ app.get('/', mainResponse);
 const textGet = (req, res) => {
   const textFile = req.params.id;
   console.log(textFile);
-  const readStream = fs.createReadStream(`static/texts/${textFile}.txt`);
+  const readStream = fs.createReadStream(`static/texts/${textFile}.json`);
   readStream.pipe(res);
 };
 

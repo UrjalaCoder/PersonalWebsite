@@ -21,12 +21,19 @@ class App extends React.Component{
       this.setState({
         aboutText: data,
       });
-    })
+    });
+
+    getText("mainText").then((data) => {
+      this.setState({
+        mainText: data,
+      });
+    });
+
   }
 
 
   render(){
-    const { aboutText } = this.state;
+    const { aboutText, mainText } = this.state;
 
     const gradientStyle = {
       'background': `linear-gradient(to bottom, ${colors['darker-background']}, #4d515c)`,
@@ -36,8 +43,8 @@ class App extends React.Component{
       <div>
         <LandingPage />
         <div style={gradientStyle}>
-          <AboutSection text={aboutText} />
-          <MainSection />
+          <AboutSection text={aboutText ? aboutText.about : "Loading"} />
+          <MainSection text={mainText}/>
         </div>
       </div>
     );

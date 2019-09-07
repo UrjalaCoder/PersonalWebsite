@@ -1,0 +1,15 @@
+{
+  "skills": [
+    {"text": "Superb mathematical and analytical skills.", "url": "infinity.png"},
+    {"text": "Good interpersonal skills. I can get along great with all kinds of people.", "url": "users.png"},
+    {"text": "I can create innovative solutions to hard engineering problems.", "url": "innovation.png"}
+  ],
+  "technologies": [
+    {"text": "Modern JavaScript with ES6 features..", "url": "javascript.png"},
+    {"text": "ReactJS, Redux, Redux-Saga and also React-Native.", "url": "react.png"},
+    {"text": "I can program server-side using NodeJS. For instance this website is running on an ExpressJS server using NodeJS.", "url": "nodejs.svg"},
+    {"text": "I can also program in Scala and Java", "url": "scala.png"},
+    {"text": "I have excellent Python programming skills. For instance, I have made a Neural Network on my own using Python 3.7 and Numpy.", "url": "python.png"},
+    {"text": "Native C-code with C99 standards. Also C++.", "url": "c.png"}
+  ]
+}
