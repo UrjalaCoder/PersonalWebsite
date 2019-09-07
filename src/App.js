@@ -1,6 +1,6 @@
 import React from "react";
 import MainSection from "sections/MainSection";
-import LandingPage from "sections/LandingPage";
+import Titlebar from "sections/Titlebar";
 import AboutSection from "sections/AboutSection";
 import getText from "./utils/getServerTexts";
 import colors from "./colors";
@@ -41,7 +41,7 @@ class App extends React.Component{
 
     return(
       <div>
-        <LandingPage />
+        <Titlebar />
         <div style={gradientStyle}>
           <AboutSection text={aboutText ? aboutText.about : "Loading"} />
           <MainSection text={mainText}/>

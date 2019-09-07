@@ -11,6 +11,8 @@ const getBox = ({text, url}) => {
     borderColor: colors['light-border'],
     textAlign: 'center',
     backgroundColor: colors['baby-blue'],
+    paddingLeft: '20px',
+    paddingRight: '20px',
   };
 
   return (
