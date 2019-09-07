@@ -1,5 +1,4 @@
 import React from "react";
-import Overlay from "../components/Overlay";
 import colors from "../colors";
 
 const LandingPage = (props) => {

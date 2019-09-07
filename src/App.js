@@ -3,6 +3,7 @@ import MainSection from "sections/MainSection";
 import Titlebar from "sections/Titlebar";
 import AboutSection from "sections/AboutSection";
 import getText from "./utils/getServerTexts";
+import getRepos from "./utils/getRepos";
 import colors from "./colors";
 
 class App extends React.Component{
@@ -13,6 +14,8 @@ class App extends React.Component{
       aboutText: undefined,
       landingText: undefined,
       mainText: undefined,
+      repoData: undefined,
+      projectsData: undefined
     };
   }
 
@@ -29,11 +32,17 @@ class App extends React.Component{
       });
     });
 
+    getRepos().then((data) => {
+      console.log(data);
+      this.setState({
+        projectsData: data,
+      });
+    });
   }
 
 
   render(){
-    const { aboutText, mainText } = this.state;
+    const { aboutText, mainText, projectsData } = this.state;
 
     const gradientStyle = {
       'background': `linear-gradient(to bottom, ${colors['darker-background']}, #4d515c)`,
@@ -44,7 +53,7 @@ class App extends React.Component{
         <Titlebar />
         <div style={gradientStyle}>
           <AboutSection text={aboutText ? aboutText.about : "Loading"} />
-          <MainSection text={mainText}/>
+          <MainSection text={mainText} projectsData={projectsData} />
         </div>
       </div>
     );

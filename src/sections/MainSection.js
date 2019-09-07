@@ -2,6 +2,7 @@ import React from "react";
 import getLorem from "utils/getLorem";
 import {ContentBox, ImageContentBox} from "../components/ContentBox";
 import MainContent from "../components/MainContent";
+import ProjectsSection from "../sections/Projects";
 import colors from "../colors";
 
 
@@ -90,6 +91,10 @@ const MainSection = (props) => {
       <MainContent>
         {superpowerBoxes}
       </MainContent>
+      <div style={titleStyle}>
+        {'My Projects'}
+      </div>
+      <ProjectsSection projectsData={props.projectsData} />
       <div style={titleStyle}>
         {'Technologies that I wield'}
       </div>

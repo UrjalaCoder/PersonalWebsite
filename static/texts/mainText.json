@@ -1,7 +1,7 @@
 {
   "skills": [
-    {"text": "Superb mathematical and analytical skills.", "url": "infinity.png"},
     {"text": "Good interpersonal skills. I can get along great with all kinds of people.", "url": "users.png"},
+    {"text": "Superb mathematical and analytical skills.", "url": "integral.png"},
     {"text": "I can create innovative solutions to hard engineering problems.", "url": "innovation.png"}
   ],
   "technologies": [
