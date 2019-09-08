@@ -68,6 +68,6 @@ const getRepos = (req, res) => {
 app.get('/repos', getRepos);
 
 
-app.listen(3001, () => {
-  console.log('Server started at port 3001'); // eslint-disable-line
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`Server started at port ${process.env.PORT || 3001}`);
 });
