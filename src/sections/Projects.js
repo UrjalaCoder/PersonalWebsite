@@ -138,6 +138,8 @@ const ProjectsSection = (props) => {
   const cols = formColumns(projects);
 
   const imageStyle = {
+    paddingTop: '10px',
+    paddingLeft: '50px'
   };
 
   return (
@@ -159,7 +161,7 @@ const ProjectsSection = (props) => {
           <p>Here you can some of my personal and school projects. There's also links to the repositories.</p>
           <p>My GitHub username is UrjalaCoder</p>
         </div>
-        <a href="https://github.com/UrjalaCoder"><img style={imageStyle} src="/static/images/github.png" width={100} height={100}></img></a>
+        <a href="https://github.com/UrjalaCoder"><img style={imageStyle} src="/static/images/github.png" width={120} height={120}></img></a>
       </ContentBox>
       <MainContent>
         {cols}

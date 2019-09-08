@@ -3,6 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import config from './config';
 import fetch from 'node-fetch';
+import moment from 'moment';
 
 const app = express();
 
@@ -23,6 +24,7 @@ const textGet = (req, res) => {
 
 app.get("/texts/:id", textGet);
 
+
 const getRealData = (repos) => {
   return repos.map((repo) => {
     const { name, html_url, description, homepage, id } = repo;
@@ -33,18 +35,35 @@ const getRealData = (repos) => {
   }).filter((repo) => repo !== undefined);
 };
 
+// Implement a simple cache.
+
+let gitCache = {};
+let lastCacheUpdate = undefined;
 const getRepos = (req, res) => {
-  const { GITHUB_API } = config;
-  const url = "https://api.github.com/user/repos";
-  const headers = {
-    'Authorization': `token ${GITHUB_API}`,
-  };
-  fetch(url, { headers })
+
+  const now = moment();
+  // Update every hour
+  if(!lastCacheUpdate || now.isAfter(lastCacheUpdate, 'hour')) {
+    const { GITHUB_API } = config;
+    const url = "https://api.github.com/user/repos";
+    const headers = {
+      'Authorization': `token ${GITHUB_API}`,
+    };
+    fetch(url, { headers })
     .then((data) => data.json())
     .then((json) => {
-      console.log(json);
       return json;
-    }).then((json) => res.send(getRealData(json)));
+    }).then((json) => {
+      const realData = getRealData(json);
+      gitCache = realData;
+      lastCacheUpdate = now;
+      console.log('Sending real!');
+      res.send(realData);
+    });
+  } else {
+    console.log('Sending cached!');
+    res.send(gitCache);
+  }
 };
 
 app.get('/repos', getRepos);
