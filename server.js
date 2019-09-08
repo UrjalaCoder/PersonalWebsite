@@ -41,8 +41,8 @@ let lastCacheUpdate = undefined;
 const getRepos = (req, res) => {
 
   const now = moment();
-  // Update every hour
-  if(!lastCacheUpdate || now.isAfter(lastCacheUpdate, 'hour')) {
+  // Update every second at most.
+  if(!lastCacheUpdate || now.isAfter(lastCacheUpdate, 'second')) {
     const { GITHUB_API } = process.env;
     const url = "https://api.github.com/user/repos";
     const headers = {
