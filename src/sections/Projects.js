@@ -19,7 +19,6 @@ const projectBox = ({name, html_url, description, homepage, id}) => {
   const containerStyle = {
     display: 'flex',
     flexDirection: 'column',
-    border: '1px solid'
   };
 
   const detailsStyle = {
@@ -126,11 +125,41 @@ const ProjectsSection = (props) => {
     margin: '0px',
   };
 
+  const containerStyle = {
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    width: '100%',
+    borderRadius: '5px',
+    backgroundColor: colors['baby-blue'],
+    flex: '1 0 0',
+  };
+
   const cols = formColumns(projects);
+
+  const imageStyle = {
+  };
 
   return (
     <MainContent>
-      {cols}
+      <ContentBox style={{
+        ...containerStyle,
+        marginLeft: '30px',
+        marginRight: '30px',
+        justifyContent: 'space-evenly',
+        alignItems: 'start',
+        paddingLeft: '30px',
+        paddingTop: '30px',
+        paddingBottom: '30px',
+        fontSize: '24px',
+        flexDirection: 'row'
+      }}>
+        <p>{'Here you can some of my personal and school projects. There\'s also links to the repositories.'}</p>
+        <a href="https://github.com/UrjalaCoder"><img style={imageStyle} src="/static/images/github.png" width={100} height={100}></img></a>
+      </ContentBox>
+      <MainContent>
+        {cols}
+      </MainContent>
     </MainContent>
   );
 };
