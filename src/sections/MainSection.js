@@ -86,7 +86,7 @@ const MainSection = (props) => {
     <div>
     <div style={sectionStyle}>
       <div style={titleStyle}>
-        {'My superpowers'}
+        {'Superpowers'}
       </div>
       <MainContent>
         {superpowerBoxes}
@@ -96,7 +96,7 @@ const MainSection = (props) => {
       </div>
       <ProjectsSection projectsData={props.projectsData} />
       <div style={titleStyle}>
-        {'Technologies that I wield'}
+        {'Technologies'}
       </div>
       <div>
         {techGroup}

@@ -14,6 +14,7 @@ const projectBox = ({name, html_url, description, homepage, id}) => {
     fontSize: '20px',
     paddingTop: '10px',
     paddingLeft: '10px',
+    fontWeight: 'bold'
   };
 
   const containerStyle = {
@@ -31,7 +32,7 @@ const projectBox = ({name, html_url, description, homepage, id}) => {
     textDecoration: 'none',
     display: 'block',
     color: 'white',
-    backgroundColor: '#6b7696',
+    backgroundColor: '#4d5f94',
     paddingTop: '10px',
     paddingBottom: '10px',
     marginRight: '10px',
@@ -56,15 +57,14 @@ const projectBox = ({name, html_url, description, homepage, id}) => {
     <li key={id} style={itemStyle}>
       <div style={containerStyle}>
         <div style={nameStyle}>
-          {name}
+          <a target="_blank" style={repoLinkStyle} href={html_url}>{name}</a>
         </div>
         <div style={detailsStyle}>
           <div>
             {description || "Undef"}
           </div>
           <br />
-          {(homepage && (<a style={demoLinkStyle} href={homepage}>DEMO</a>))}
-          <a style={repoLinkStyle} href={html_url}>Repository</a>
+          {(homepage && (<a target="_blank" style={demoLinkStyle} href={homepage}>Live app</a>))}
         </div>
       </div>
     </li>
@@ -74,8 +74,7 @@ const projectBox = ({name, html_url, description, homepage, id}) => {
 const formColumns = (projectData) => {
   const containerStyle = {
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'start',
     width: '100%',
     borderRadius: '5px',
     backgroundColor: colors['baby-blue'],
@@ -158,8 +157,9 @@ const ProjectsSection = (props) => {
         flexWrap: 'wrap',
       }}>
         <div>
-          <p>Here you can some of my personal and school projects. There's also links to the repositories.</p>
-          <p>My GitHub username is UrjalaCoder</p>
+          <p>Here you can some of my personal and school projects. There's also links to the repositories.
+          <br />Some of the projects have live instances running.</p>
+          <p>My GitHub username is <a href="https://github.com/UrjalaCoder">UrjalaCoder</a></p>
         </div>
         <a href="https://github.com/UrjalaCoder"><img style={imageStyle} src="/static/images/github.png" width={120} height={120}></img></a>
       </ContentBox>
