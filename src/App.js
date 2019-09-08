@@ -2,6 +2,7 @@ import React from "react";
 import MainSection from "sections/MainSection";
 import Titlebar from "sections/Titlebar";
 import AboutSection from "sections/AboutSection";
+import Footer from "sections/Footer";
 import getText from "./utils/getServerTexts";
 import getRepos from "./utils/getRepos";
 import colors from "./colors";
@@ -55,6 +56,7 @@ class App extends React.Component{
           <AboutSection text={aboutText ? aboutText.about : "Loading"} />
           <MainSection text={mainText} projectsData={projectsData} />
         </div>
+        <Footer />
       </div>
     );
   }

@@ -98,7 +98,7 @@ const formColumns = (projectData) => {
       return projectBox(project);
     });
     cols.push(
-      <ContentBox style={containerStyle}>
+      <ContentBox style={containerStyle} key={i}>
         <ul style={listStyle}>
           {projectElements}
         </ul>
@@ -152,9 +152,13 @@ const ProjectsSection = (props) => {
         paddingTop: '30px',
         paddingBottom: '30px',
         fontSize: '24px',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        flexWrap: 'wrap',
       }}>
-        <p>{'Here you can some of my personal and school projects. There\'s also links to the repositories.'}</p>
+        <div>
+          <p>Here you can some of my personal and school projects. There's also links to the repositories.</p>
+          <p>My GitHub username is UrjalaCoder</p>
+        </div>
         <a href="https://github.com/UrjalaCoder"><img style={imageStyle} src="/static/images/github.png" width={100} height={100}></img></a>
       </ContentBox>
       <MainContent>
