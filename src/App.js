@@ -6,6 +6,7 @@ import Footer from "sections/Footer";
 import getText from "./utils/getServerTexts";
 import getRepos from "./utils/getRepos";
 import colors from "./colors";
+import "./styling/App.css";
 
 class App extends React.Component{
 

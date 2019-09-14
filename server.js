@@ -3,6 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import fetch from 'node-fetch';
 import moment from 'moment';
+import config from './config';
 
 const app = express();
 
@@ -43,7 +44,7 @@ const getRepos = (req, res) => {
   const now = moment();
   // Update every second at most.
   if(!lastCacheUpdate || now.isAfter(lastCacheUpdate, 'second')) {
-    const { GITHUB_API } = process.env;
+    let { GITHUB_API } = config;
     const url = "https://api.github.com/user/repos";
     const headers = {
       'Authorization': `token ${GITHUB_API}`,

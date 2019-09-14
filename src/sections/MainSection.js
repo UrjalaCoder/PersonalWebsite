@@ -1,6 +1,7 @@
 import React from "react";
 import getLorem from "utils/getLorem";
-import {ContentBox, ImageContentBox} from "../components/ContentBox";
+import "../styling/App.css"
+import { ContentBox, ImageContentBox } from "../components/ContentBox";
 import MainContent from "../components/MainContent";
 import ProjectsSection from "../sections/Projects";
 import colors from "../colors";
@@ -37,15 +38,6 @@ const formGroups = (allBoxes) => {
 };
 
 const MainSection = (props) => {
-
-  const sectionStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-evenly',
-    flexBasis: '100%',
-    marginLeft: '60px',
-    marginRight: '60px',
-  };
 
   const titleStyle = {
     fontSize: 40,
@@ -84,7 +76,7 @@ const MainSection = (props) => {
 
   return (
     <div>
-    <div style={sectionStyle}>
+    <div id="mainContainer">
       <div style={titleStyle}>
         {'Superpowers'}
       </div>

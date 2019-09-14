@@ -1,0 +1,92 @@
+
+.superpowerBox {
+  fontSize: 22px;
+  borderColor: colors['light-border'],
+  textAlign: 'center',
+  backgroundColor: colors['baby-blue'],
+  paddingLeft: '20px',
+  paddingRight: '20px',
+}
+
+.mainContentBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-basis: 100%;
+  justify-content: space-evenly;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+
+#mainContainer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-basis: 100%;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+/* Projects */
+.projectItem {
+  flex-grow: 1;
+  flex-basis: 1;
+}
+
+.projectName {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.projectContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectDetails {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-left: 10px
+}
+
+.demoLink {
+  text-decoration:none;
+  display: block;
+  color: white;
+  background-color: #4d5f94;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.repoLink {
+  text-decoration: none;
+  display: block;
+  color: white;
+  background-color: #6b7696;
+  padding-top: 10px;
+  padding-bottom:  10px;
+  text-align: center;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+@media(max-width: 768px) {
+  .projectContainer {
+    width: 100%;
+  }
+  #mainContainer {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

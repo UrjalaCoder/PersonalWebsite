@@ -2,69 +2,22 @@ import React from "react";
 import colors from '../colors';
 import MainContent from '../components/MainContent';
 import { ContentBox } from '../components/ContentBox';
+import '../styling/App.css';
 
 const projectBox = ({name, html_url, description, homepage, id}) => {
 
-  const itemStyle = {
-    flexGrow: '1',
-    flexBasis: '1',
-  };
-
-  const nameStyle = {
-    fontSize: '20px',
-    paddingTop: '10px',
-    paddingLeft: '10px',
-    fontWeight: 'bold'
-  };
-
-  const containerStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-  };
-
-  const detailsStyle = {
-    marginTop: '20px',
-    marginBottom: '30px',
-    paddingLeft: '10px'
-  };
-
-  const demoLinkStyle = {
-    textDecoration: 'none',
-    display: 'block',
-    color: 'white',
-    backgroundColor: '#4d5f94',
-    paddingTop: '10px',
-    paddingBottom: '10px',
-    marginRight: '10px',
-    textAlign: 'center',
-    marginBottom: '10px',
-    borderRadius: '10px',
-  };
-
-  const repoLinkStyle = {
-    textDecoration: 'none',
-    display: 'block',
-    color: 'white',
-    backgroundColor: '#6b7696',
-    paddingTop: '10px',
-    paddingBottom: '10px',
-    textAlign: 'center',
-    marginRight: '10px',
-    borderRadius: '10px',
-  };
-
   return (
-    <li key={id} style={itemStyle}>
-      <div style={containerStyle}>
-        <div style={nameStyle}>
-          <a target="_blank" style={repoLinkStyle} href={html_url}>{name}</a>
+    <li key={id} className="projectItem">
+      <div className="projectContainer">
+        <div className="projectName">
+          <a target="_blank" className="repoLink" href={html_url}>{name}</a>
         </div>
-        <div style={detailsStyle}>
+        <div className="projectDetails">
           <div>
             {description || "Undef"}
           </div>
           <br />
-          {(homepage && (<a target="_blank" style={demoLinkStyle} href={homepage}>Live app</a>))}
+          {(homepage && (<a target="_blank" className="demoLink" href={homepage}>Live app</a>))}
         </div>
       </div>
     </li>
@@ -163,7 +116,7 @@ const ProjectsSection = (props) => {
         </div>
         <a href="https://github.com/UrjalaCoder"><img style={imageStyle} src="/static/images/github.png" width={120} height={120}></img></a>
       </ContentBox>
-      <MainContent>
+      <MainContent id="projectListContainer">
         {cols}
       </MainContent>
     </MainContent>

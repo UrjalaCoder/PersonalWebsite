@@ -1,5 +1,6 @@
 import React from "react";
 import getLorem from "../utils/getLorem";
+import "../styling/App.css";
 
 const MainContent = (props) => {
   const text = props.text || getLorem();
@@ -16,7 +17,7 @@ const MainContent = (props) => {
   };
 
   return (
-    <div style={containerStyle}>
+    <div className={`mainContentBox ${props.classes || ""}`}>
       {props.children}
     </div>
   );

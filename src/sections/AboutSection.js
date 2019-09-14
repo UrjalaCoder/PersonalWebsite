@@ -29,9 +29,7 @@ const AboutSection = (props) => {
     flexWrap: 'wrap',
   };
   return (
-    <MainContent style={{
-      flexDirection: 'column',
-    }}>
+    <MainContent classes="flexColumn">
       <div style={titleStyle}>
         {"About me"}
       </div>
